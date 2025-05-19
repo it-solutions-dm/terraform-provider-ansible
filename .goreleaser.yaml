@@ -33,4 +33,12 @@ checksum:
 
 signs:
   - artifacts: checksum
-    args: ["--batch", "--yes", "--armor", "--pinentry-mode", "loopback", "--detach-sign"]
+    args:
+      - "--batch"
+      - "--yes"
+      - "--armor"
+      - "--pinentry-mode"
+      - "loopback"
+      - "--passphrase"
+      - "${GPG_PASSPHRASE}"
+      - "--detach-sign"
