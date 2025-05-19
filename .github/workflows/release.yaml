@@ -35,5 +35,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: binaries
+          name: terraform-provider-ansible-${{ matrix.goos }}-${{ matrix.goarch }}
           path: dist/*.zip
