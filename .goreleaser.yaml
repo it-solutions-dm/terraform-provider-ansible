@@ -4,6 +4,7 @@ dist: dist
 
 dockers: []
 
+
 builds:
   - id: terraform-provider-ansible
     main: .
