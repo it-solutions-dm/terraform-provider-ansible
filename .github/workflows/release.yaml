@@ -25,14 +25,9 @@ jobs:
       - name: Import GPG key
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           mkdir -p ~/.gnupg
           chmod 700 ~/.gnupg
-          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
-          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
-          chmod 600 ~/.gnupg/gpg.conf
-
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           echo RELOADAGENT | gpg-connect-agent
 
